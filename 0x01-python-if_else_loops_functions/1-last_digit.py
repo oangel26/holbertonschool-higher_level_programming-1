@@ -2,7 +2,6 @@
 import random
 number = random.randint(-10000, 10000)
 msg = ""
-number = -2235
 last_digit = (abs(number) % 10 * -1)
 
 # 1. Tomar ultimo digito con valor absoluto
