@@ -4,7 +4,7 @@ for i in range(1, 90):
     second = i % 10
     if first == second:
         continue
-    if i > 9 and first - second == 1:
+    if i > 9 and (first - second) > 0:
         continue
     print("{}{}".format(first, second), end='')
     if i != 89:
