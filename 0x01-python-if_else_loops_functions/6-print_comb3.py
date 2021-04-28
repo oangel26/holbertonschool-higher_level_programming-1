@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-
-for i range(1, 99):
+for i in range(1, 99):
 	first = i / 10
 	second = i % 10
 	if first == second:
