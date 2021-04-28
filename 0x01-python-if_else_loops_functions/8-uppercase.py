@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 def uppercase(str):
     for i, c in enumerate(str):
         ascii = ord(c)
