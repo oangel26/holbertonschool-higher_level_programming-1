@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 import hidden_4
 if __name__ == '__main__':
-    for text in hidden_4:
+    attrib = dir(hidden_4)
+    for text in attrib:
+        if text[0] == '_':
+            continue
         print(text)
 
