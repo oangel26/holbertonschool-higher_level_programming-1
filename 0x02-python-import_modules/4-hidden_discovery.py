@@ -6,4 +6,3 @@ if __name__ == '__main__':
         if text[0] == '_':
             continue
         print(text)
-
