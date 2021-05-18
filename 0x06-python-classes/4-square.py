@@ -15,20 +15,16 @@ class Square:
     Attributes:
     """
 
-    def __init__(self, size=0):
+    def __init__(self, value=0):
         """Constructor
         Args:
-            size (int): size of square `size`.
+            value (int): value of square `value`.
         Raises:
-        TypeError: The ``size`` size must be an integer.
-        ValueError: ``size`` must be >= 0.
+        TypeError: The ``value`` value must be an integer.
+        ValueError: ``value`` must be >= 0.
 
         """
-        if type(size).__name__ != 'int':
-            raise TypeError('size must be an integer')
-        elif size < 0:
-            raise ValueError('size must be >= 0')
-        self.__size = size
+        self.size = value
 
     def area(self):
         """Compute the area of square"""
