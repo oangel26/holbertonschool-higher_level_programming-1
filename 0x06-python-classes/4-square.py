@@ -9,9 +9,6 @@ Square class allow all data and methods of the square
 """
 
 
-from typing import Sized
-
-
 class Square:
     """this is the empty class Square
     Args:
@@ -27,7 +24,11 @@ class Square:
         ValueError: ``size`` must be >= 0.
 
         """
-        self.size = size
+        if type(size).__name__ != 'int':
+            raise TypeError('size must be an integer')
+        elif size < 0:
+            raise ValueError('size must be >= 0')
+        self.__size = size
 
     def area(self):
         """Compute the area of square"""
@@ -35,13 +36,12 @@ class Square:
 
     @property
     def size(self):
-        """int: getter method."""
         return self.__size
 
     @size.setter
-    def size(self, value):
-        if type(value).__name__ != 'int':
+    def size(self, size):
+        if type(size).__name__ != 'int':
             raise TypeError('size must be an integer')
-        elif value < 0:
+        elif size < 0:
             raise ValueError('size must be >= 0')
-        self.__size = value
+        self.__size = size
