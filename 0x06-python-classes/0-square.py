@@ -7,6 +7,11 @@ Square class allow all data and methods of the square
    http://google.github.io/styleguide/pyguide.html
 
 """
+
+
 class Square:
-    """ Square Class is oriented Object programming """
-    pass
+    """this is the empty class Square
+    Args:
+    Attributes:
+    """
+    
