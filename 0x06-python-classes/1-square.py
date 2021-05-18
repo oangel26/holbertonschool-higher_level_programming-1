@@ -11,8 +11,7 @@ Square class allow all data and methods of the square
 
 class Square:
     """this is the empty class Square
-    Args: 
-
+    Args:
     Attributes:
     """
 
