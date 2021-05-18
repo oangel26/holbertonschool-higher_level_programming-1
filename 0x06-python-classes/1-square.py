@@ -15,6 +15,7 @@ class Square:
 
     Attributes:
     """
+
     def __init__(self, size=3):
         """Constructor
         Args:
