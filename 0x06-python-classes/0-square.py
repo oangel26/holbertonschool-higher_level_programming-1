@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 """Square data.
 
@@ -5,7 +6,6 @@ Square class allow all data and methods of the square
 
 .. _Google Python Style Guide:
    http://google.github.io/styleguide/pyguide.html
-
 """
 
 
@@ -14,4 +14,3 @@ class Square:
     Args:
     Attributes:
     """
-    
