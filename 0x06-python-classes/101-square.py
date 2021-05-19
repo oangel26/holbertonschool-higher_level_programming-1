@@ -67,8 +67,8 @@ class Square:
                 text += '\n'
         for i in range(self.size):
             text += " " * self.position[0]
-            text += '#' * self.size 
-            if i + 1!= self.size:
+            text += '#' * self.size
+            if i + 1 != self.size:
                 text += '\n'
         if not self.__is_str:
             print(text)
