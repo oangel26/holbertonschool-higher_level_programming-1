@@ -49,6 +49,7 @@ class Rectangle:
         return self.width * 2 + self.height * 2
 
     def __str__(self):
+        """string format"""
         text = ''
 
         if self.height == 0 or self.width == 0:
@@ -66,3 +67,7 @@ class Rectangle:
         text = "Rectangle({}, {})"
         text = text.format(self.width, self.height)
         return text
+
+    def __del__(self):
+        """delete event"""
+        print("Bye rectangle...")

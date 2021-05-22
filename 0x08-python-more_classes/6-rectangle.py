@@ -4,13 +4,20 @@
 
 class Rectangle:
     """Rectangle class
+
+       class attributes
+       number_of_instances :int
        Args:
        width: int
        height int
     """
+
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def height(self):
@@ -48,13 +55,8 @@ class Rectangle:
             return 0
         return self.width * 2 + self.height * 2
 
-#    def __repr__(self):
-#        """repr: """
-#        text = "{} {}"
-#        text = text.format(self.width, self.height)
-#        print(text)
-#        return text
     def __str__(self):
+        """string format"""
         text = ''
 
         if self.height == 0 or self.width == 0:
@@ -66,3 +68,14 @@ class Rectangle:
             if i + 1 != self.height:
                 text += '\n'
         return text
+
+    def __repr__(self):
+        """repr: """
+        text = "Rectangle({}, {})"
+        text = text.format(self.width, self.height)
+        return text
+
+    def __del__(self):
+        """delete event"""
+        print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
