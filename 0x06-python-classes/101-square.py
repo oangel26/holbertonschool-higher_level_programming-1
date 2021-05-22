@@ -60,8 +60,9 @@ class Square:
         """print square with #"""
         text = ""
         if self.size == 0:
-            print('')
-            return '\n'
+            if not self.__is_str:
+                print('')
+            return ''
         if self.position[1] > 0:
             for _ in range(self.position[1]):
                 text += '\n'
