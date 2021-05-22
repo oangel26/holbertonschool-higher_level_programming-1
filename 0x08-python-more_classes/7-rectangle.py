@@ -4,13 +4,21 @@
 
 class Rectangle:
     """Rectangle class
+
+       class attributes
+       number_of_instances :int
        Args:
        width: int
        height int
     """
+
+    number_of_instances = 0
+    print_symbol = '#'
+
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def height(self):
@@ -57,7 +65,7 @@ class Rectangle:
 
         for i in range(self.height):
             for j in range(self.width):
-                text = text + '#'
+                text = text + Rectangle.print_symbol
             if i + 1 != self.height:
                 text += '\n'
         return text
@@ -71,3 +79,4 @@ class Rectangle:
     def __del__(self):
         """delete event"""
         print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
