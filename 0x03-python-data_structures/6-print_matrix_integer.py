@@ -9,4 +9,4 @@ def print_matrix_integer(matrix=[[]]):
         max_n = max(row)
         if greatest is None or max_n > greatest:
             greatest = max_n
-    print("{}".format(greatest))
+    print("{:d}".format(greatest))
