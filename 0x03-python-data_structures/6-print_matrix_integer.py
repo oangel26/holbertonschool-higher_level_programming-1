@@ -2,7 +2,7 @@
 
 def print_matrix_integer(matrix=[[]]):
     if len(matrix) == 1:
-        print(''.format(None))
+        print('{:s}'.format(''))
         return
     for row in matrix:
         for col in row:
