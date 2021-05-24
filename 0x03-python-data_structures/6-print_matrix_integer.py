@@ -3,7 +3,7 @@
 def print_matrix_integer(matrix=[[]]):
     greatest = None
     if len(matrix) == 1:
-        print('')
+        print(''.format(None))
         return
     for row in matrix:
         max_n = max(row)
