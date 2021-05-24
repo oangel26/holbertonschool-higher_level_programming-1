@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 def validate_index(tuple, idx):
     try:
         return tuple[idx]
