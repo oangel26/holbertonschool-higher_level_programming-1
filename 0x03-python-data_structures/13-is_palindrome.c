@@ -10,7 +10,7 @@ int is_palindrome(listint_t **head)
 {
 	size_t len = 0, i = 0;
 	listint_t *tmp = *head;
-	
+	int array[5000];
 
 	if (!head || !*head) /*edge case*/
 		return (IS_PALINDROME);
@@ -19,7 +19,7 @@ int is_palindrome(listint_t **head)
 		tmp = tmp->next;
 
 	/*create array */
-	int array[len-1];
+	
 
 	tmp = *head;
 	for (i = 0; i < len; i++)
