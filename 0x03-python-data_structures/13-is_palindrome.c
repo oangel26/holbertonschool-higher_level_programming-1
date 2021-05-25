@@ -15,7 +15,7 @@ int is_palindrome(listint_t **head)
 	if (!head || !*head) /*edge case*/
 		return (IS_PALINDROME);
 
-	for (len = 0; tmp; len++)
+	for (len = 0; tmp->next; len++)
 		tmp = tmp->next;
 
 	/*create array */
