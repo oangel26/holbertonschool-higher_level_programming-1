@@ -40,10 +40,13 @@ int is_palindrome(listint_t **head)
 	tmp = *head; /* advance and compare since middle linked list*/
 	for (i = 0; i < len; i++, len--)
 	{
-		start = get_node_idx(tmp, i);
-		end = get_node_idx(tmp, len);
+		start = get_node_idx(tmp, 0);
+		end = get_node_idx(tmp, len - i);
+		
 		if (start->n != end->n)
 			return (NOT_PALINDROME);
+
+		tmp = tmp->next;
 	}
 	return (IS_PALINDROME);
 }
