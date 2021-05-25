@@ -1,5 +1,7 @@
 #include "lists.h"
 
+#define BUFFER_SIZE 5000
+
 #include <stdlib.h>
 /**
  * is_palindrome - check if linked list is palindrome
@@ -10,19 +12,17 @@ int is_palindrome(listint_t **head)
 {
 	size_t len = 0, i = 0;
 	listint_t *tmp = *head;
-	int array[5000];
+	int array[BUFFER_SIZE];
 
 	if (!head || !*head) /*edge case*/
 		return (IS_PALINDROME);
 
-	/*create array */
 	tmp = *head;
-	for (len = 0; tmp->next; len++)
+	for (len = 0; tmp->next; len++) /*create array */
 	{
 		array[i] = tmp->n;
 		tmp = tmp->next;
 	}
-
 	/* advance and compare since middle linked list*/
 	for (i = 0; i < len; i++, len--)
 		if (array[i] != array[len - 1])
