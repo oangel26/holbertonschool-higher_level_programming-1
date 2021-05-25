@@ -18,9 +18,9 @@ int is_palindrome(listint_t **head)
 		return (IS_PALINDROME);
 
 	tmp = *head;
-	for (len = 0; tmp->next; len++) /*create array */
+	for (len = 0; tmp; len++) /*create array */
 	{
-		array[i] = tmp->n;
+		array[len] = tmp->n;
 		tmp = tmp->next;
 	}
 	/* advance and compare since middle linked list*/
