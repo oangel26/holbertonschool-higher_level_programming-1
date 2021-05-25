@@ -10,7 +10,7 @@ int is_palindrome(listint_t **head)
 {
 	size_t len = 0, i = 0;
 	listint_t *tmp = *head;
-	int *array = NULL;
+	
 
 	if (!head || !*head) /*edge case*/
 		return (IS_PALINDROME);
@@ -19,9 +19,7 @@ int is_palindrome(listint_t **head)
 		tmp = tmp->next;
 
 	/*create array */
-	array = malloc(sizeof(int) * len -1);
-	if (!array)
-		return (0);
+	int array[len-1];
 
 	tmp = *head;
 	for (i = 0; i < len; i++)
@@ -35,10 +33,8 @@ int is_palindrome(listint_t **head)
 	{
 		if (array[i] != array[len - 1])
 		{
-			free(array);
 			return (NOT_PALINDROME);
 		}
 	}
-	free(array);
 	return (IS_PALINDROME);
 }
