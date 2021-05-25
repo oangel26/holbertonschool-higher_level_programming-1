@@ -1,26 +1,6 @@
 #include "lists.h"
 
-/**
- * get_node_idx - Get the node idx object
- * @head:  singly linked list
- * @idx: index to find
- * Return: listint_t*
- */
-listint_t *get_node_idx(listint_t *head, size_t idx)
-{
-	size_t i;
-
-	if (!head)
-		return (0);
-
-	for (i = 0; head->next && i < idx; i++)
-		head = head->next;
-
-	if (idx > i)
-		return (NULL);
-	return (head);
-}
-
+#include <stdlib.h>
 /**
  * is_palindrome - check if linked list is palindrome
  * @head: single linked list
@@ -28,8 +8,9 @@ listint_t *get_node_idx(listint_t *head, size_t idx)
  */
 int is_palindrome(listint_t **head)
 {
-	size_t len, i;
-	listint_t *tmp = *head, *start = NULL, *end = NULL;
+	size_t len = 0, i = 0;
+	listint_t *tmp = *head;
+	int *array = NULL;
 
 	if (!head || !*head) /*edge case*/
 		return (IS_PALINDROME);
@@ -37,16 +18,27 @@ int is_palindrome(listint_t **head)
 	for (len = 0; tmp->next; len++)
 		tmp = tmp->next;
 
-	tmp = *head; /* advance and compare since middle linked list*/
-	for (i = 0; i < len; i++, len--)
-	{
-		start = get_node_idx(tmp, 0);
-		end = get_node_idx(tmp, len - i);
-		
-		if (start->n != end->n)
-			return (NOT_PALINDROME);
+	/*create array */
+	array = malloc(sizeof(int) * len);
+	if (!array)
+		return (0);
 
+	tmp = *head;
+	for (i = 0; i <= len; i++)
+	{
+		array[i] = tmp->n;
 		tmp = tmp->next;
 	}
+
+	/* advance and compare since middle linked list*/
+	for (i = 0; i < len; i++, len--)
+	{
+		if (array[i] != array[len])
+		{
+			free(array);
+			return (NOT_PALINDROME);
+		}
+	}
+	free(array);
 	return (IS_PALINDROME);
 }
