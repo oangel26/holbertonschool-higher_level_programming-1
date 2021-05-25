@@ -15,7 +15,7 @@ int is_palindrome(listint_t **head)
 	if (!head || !*head) /*edge case*/
 		return (IS_PALINDROME);
 
-	for (len = 0; tmp->next; len++)
+	for (len = 0; tmp; len++)
 		tmp = tmp->next;
 
 	/*create array */
@@ -24,7 +24,7 @@ int is_palindrome(listint_t **head)
 		return (0);
 
 	tmp = *head;
-	for (i = 0; i <= len; i++)
+	for (i = 0; i < len; i++)
 	{
 		array[i] = tmp->n;
 		tmp = tmp->next;
@@ -33,7 +33,7 @@ int is_palindrome(listint_t **head)
 	/* advance and compare since middle linked list*/
 	for (i = 0; i < len; i++, len--)
 	{
-		if (array[i] != array[len])
+		if (array[i] != array[len - 1])
 		{
 			free(array);
 			return (NOT_PALINDROME);
