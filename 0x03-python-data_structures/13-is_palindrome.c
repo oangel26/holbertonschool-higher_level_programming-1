@@ -15,11 +15,11 @@ int is_palindrome(listint_t **head)
 	if (!head || !*head) /*edge case*/
 		return (IS_PALINDROME);
 
-	for (len = 0; tmp->next; len++)
+	for (len = 0; tmp; len++)
 		tmp = tmp->next;
 
 	/*create array */
-	array = malloc(sizeof(int) * len);
+	array = malloc(sizeof(int) * len -1);
 	if (!array)
 		return (0);
 
