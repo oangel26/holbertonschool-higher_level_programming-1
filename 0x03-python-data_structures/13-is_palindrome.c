@@ -23,6 +23,7 @@ int is_palindrome(listint_t **head)
 		array[len] = tmp->n;
 		tmp = tmp->next;
 	}
+
 	/* advance and compare since middle linked list*/
 	for (i = 0; i < len; i++, len--)
 		if (array[i] != array[len - 1])
