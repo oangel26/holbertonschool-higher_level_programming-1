@@ -17,7 +17,5 @@ class MyList(list):
             Args:
                 self: Mylist
         """
-        copied = self.copy()
-        copied.sort()
-        print(copied)
-        return copied
+        print(sorted(self))
+
