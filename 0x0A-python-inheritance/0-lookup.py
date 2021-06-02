@@ -8,7 +8,7 @@ lookup:
 
 def lookup(obj):
     """lookup
-        args: 
+        Args:
             obj: object
     """
     return dir(obj)
