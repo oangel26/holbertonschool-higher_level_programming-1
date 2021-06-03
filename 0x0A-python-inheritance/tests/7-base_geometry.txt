@@ -1,0 +1,30 @@
+This is a module of Base geometry
+
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+TESTS
+
+Test0: Base geometry ok
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("my_int", 12)
+    >>> bg.integer_validator("width", 89)
+
+Test1: Base geometry string
+    >>> bg.integer_validator("name", "John")
+    Traceback (most recent call last):
+        File "<stdin>", line 1, in <module>
+        File "/home/william/holbie/holbertonschool-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 34, in integer_validator
+            raise TypeError(text)
+    TypeError: name must be an integer
+
+Test2: Negative numbers
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("my_int", -12)
+    Traceback (most recent call last):
+      File "/usr/lib/python3.8/doctest.py", line 1336, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest 7-base_geometry.txt[6]>", line 1, in <module>
+        bg.integer_validator("my_int", -12)
+      File "/home/william/holbie/holbertonschool-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 38, in integer_validator
+        raise ValueError(text)
+    ValueError: my_int must be greater than 0
