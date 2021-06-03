@@ -11,8 +11,9 @@ class BaseGeometry:
     """
     this class is a base of Geometry
     """
+
     def area(self):
         """
         blueprint method
         """
-        pass
+        raise Exception("area() is not implemented")
