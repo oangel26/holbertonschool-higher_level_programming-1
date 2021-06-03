@@ -6,4 +6,10 @@ functions:
 
 
 def is_kind_of_class(obj, a_class):
+    """
+    is_kind_of_class
+    Args:
+        obj: any
+        a_class: any
+    """
     return isinstance(obj, a_class)
