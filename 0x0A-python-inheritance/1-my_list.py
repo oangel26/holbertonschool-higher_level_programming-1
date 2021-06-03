@@ -18,4 +18,3 @@ class MyList(list):
                 self: Mylist
         """
         print(sorted(self))
-
