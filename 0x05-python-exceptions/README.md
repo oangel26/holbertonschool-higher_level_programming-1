@@ -1,6 +1,6 @@
 # 0x05. Python - Exceptions
 
-Python manage of exceptions 
+Python manage of exceptions
 
 # files
 
