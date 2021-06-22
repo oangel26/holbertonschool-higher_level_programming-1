@@ -1,23 +1,15 @@
 #!/usr/bin/python3
-"""
-    module documentation
-    created class that inherits of Base
-"""
+"""Reactangle class that inherits of Base"""
 from models.base import Base
 
 
 class Rectangle(Base):
-    """
-    class constructor, instance attributes
-    Args:
-        - width (int)
-        - height (int)
-        - x (int)
-        - y (int)
-        - id (int)
-    call super class, with id, call with __init__ ,  or class parent
-    """
+    """Class new that inherits of Base"""
+
     def __init__(self, width, height, x=0, y=0, id=None):
+        """class constructor, instance attributes
+        call super class, with id, call with __init__ ,  or class parent"""
+
         super().__init__(id)
         self.width = width
         self.height = height
@@ -27,10 +19,13 @@ class Rectangle(Base):
     @property
     def width(self):
         """getter and setter for each instance attributes"""
+
         return self.__width
 
     @width.setter
     def width(self, value):
+        """validations"""
+
         if type(value) is not int:
             raise TypeError('width must be an integer')
         if value <= 0:
@@ -39,10 +34,14 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """property of height"""
+
         return self.__height
 
     @height.setter
     def height(self, value):
+        """setter of height"""
+
         if type(value) is not int:
             raise TypeError('height must be an integer')
         if value <= 0:
@@ -51,10 +50,14 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """property x"""
+
         return self.__x
 
     @x.setter
     def x(self, value):
+        """setter x"""
+
         if type(value) is not int:
             raise TypeError('x must be an integer')
         if value < 0:
@@ -63,10 +66,14 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """property y"""
+
         return self.__y
 
     @y.setter
     def y(self, value):
+        """setter y"""
+
         if type(value) is not int:
             raise TypeError('y must be an integer')
         if value < 0:
@@ -75,29 +82,32 @@ class Rectangle(Base):
 
     def area(self):
         """update class Rectangle, add public method, return area value"""
-        return self.width * self.height
+
+        return self.__width * self.__height
 
     def display(self):
-        """
-        display rectangle with # char
-        """
+        """verify y for print \n and iter and height print ' '
+        and  funally print #"""
+
         print('\n' * self.__y, end='')
         for iter_h in range(self.__height):
             print(' ' * self.__x,  end='')
-            print("#" * self.__width)
+            print("".join(["#" for i in range(self.__width)]))
 
         """update class Rectangle, add public method,
         print # for width and height"""
-        if self.width == 0 or self.height == 0:
+        if self.__width == 0 or self.__height == 0:
             print("")
 
     def __str__(self):
         """Overriding method"""
-        text_format = "[Rectangle] ({}) {}/{} - {}/{}"
-        return text_format.format(self.id, self.__x, self.__y, self.__width, self.__height)
+
+        return "[Rectangle] ({}) {}/{} - {}/{}"\
+            .format(self.id, self.__x, self.__y, self.__width, self.__height)
 
     def update(self, *args, **kwargs):
         """method that assings ags each atri... and update  args and kwargs"""
+
         if len(args):
             for iter_args, arg in enumerate(args):
                 if iter_args == 0:
@@ -124,10 +134,11 @@ class Rectangle(Base):
                     self.__y = value
 
     def to_dictionary(self):
-        """update class that returns the dictionary representation of a Rectangle"""
+        """update class that returns the
+        dictionary representation of a Rectangle"""
+
         vars = ['x', 'y', 'id', 'height', 'width']
         dict = {}
-        print(self.__dict__)
         for i in range(len(vars)):
             dict.update({vars[i]: getattr(self, vars[i])})
         return dict

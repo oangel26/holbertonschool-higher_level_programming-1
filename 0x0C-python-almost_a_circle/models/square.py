@@ -4,31 +4,35 @@ from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
+    """class Square that inherits rectangle"""
 
     def __init__(self, size, x=0, y=0, id=None):
         """class constructor"""
-        """Call the super class with id, x, y, call with __init__ ,  or class parent"""
-        super().__init__(size, size, x, y, id)
-        """asignation"""
-        self.size = size
 
-    """getter and setter public, its width and height have the same values"""
+        self.size = size
+        super().__init__(size, size, x, y, id)
+
     @property
     def size(self):
-        return self.__size
+        """getter and setter public,
+        its width and height have the same values"""
+
+        return self.width
+
     @size.setter
     def size(self, value):
-        self.__size = value
-        self.__width = value
-        self.__height = value
+        """validations"""
 
-    """overloading"""
+        self.width = value
+
     def __str__(self, **kwargs):
-        return  ("[Square] ({}) {}/{} - {}".format
-            (self.id, self.x, self.y, self.size))
+        """overloading"""
 
-    """adding method public"""
+        return ("[Square] ({}) {}/{} - {}".format
+                (self.id, self.x, self.y, self.size))
+
     def update(self, *args, **kwargs):
+        """adding method public"""
         if len(args):
             """args non-kwargs"""
             for iter_arg, arg in enumerate(args):
@@ -51,22 +55,11 @@ class Square(Rectangle):
                 elif key == "y":
                     self.y = value
 
-    """by adding the public method, that returns the dictionary"""
     def to_dictionary(self):
+        """by adding the public method, that returns the dictionary"""
+
         vars = ['id', 'size', 'x', 'y']
         dict = {}
         for i in range(len(vars)):
             dict.update({vars[i]: getattr(self, vars[i])})
         return dict
-
-
-
-if __name__ == "__main__":
-    from base import Base
-    r1 = Rectangle(10, 7, 2, 8)
-    dictionary = r1.to_dictionary()
-    json_dictionary = Base.to_json_string([dictionary])
-    print(dictionary)
-    print(type(dictionary))
-    print(json_dictionary)
-    print(type(json_dictionary))
