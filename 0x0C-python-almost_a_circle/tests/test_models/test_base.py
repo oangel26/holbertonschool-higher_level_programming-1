@@ -17,7 +17,6 @@ class TestBase(unittest.TestCase):
 
     def test_create(self):
         ''' validate type and instance'''
-
         self.assertEqual(type(self.base), Base)
         self.assertEqual(isinstance(self.base, Base), True)
 
