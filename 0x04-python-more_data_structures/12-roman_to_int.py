@@ -11,7 +11,8 @@ def roman_to_int(roman_string):
         return total
 
     for idx, letter in enumerate(roman_string):
-        if idx < len(roman_string) - 1 and roman_nums[roman_string[idx + 1]] > roman_nums[letter]:
+        if idx < len(roman_string) - 1 and \
+            roman_nums[roman_string[idx + 1]] > roman_nums[letter]:
             total += roman_nums[letter]
         else:
             total -= roman_nums[letter]
