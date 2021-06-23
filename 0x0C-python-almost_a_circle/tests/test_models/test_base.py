@@ -14,6 +14,14 @@ class TestBase(unittest.TestCase):
         self.base = None
         Base.reset()
 
+
+    def test_create(self):
+        ''' validate type and instance'''
+
+        self.assertEqual(type(self.base), Base)
+        self.assertEqual(isinstance(self.base, Base), True)
+
+
     def test_base_id(self):
         ''' create with correct id'''
         self.assertEqual(self.base.id, 1)
