@@ -117,3 +117,8 @@ class Base:
                 return [cls.create(**dics) for dics in tys]
         except IOError:
             return []
+
+    @classmethod
+    def reset(cls):
+        cls.__nb_objects = 0
+
