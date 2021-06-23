@@ -1,6 +1,6 @@
 import unittest
 
-""" test base module """
+""" unittest base module """
 from models.base import Base
 
 
@@ -15,7 +15,7 @@ class TestBase(unittest.TestCase):
         Base.reset()
 
 
-    def test_create(self):
+    def test_creation(self):
         ''' validate type and instance'''
         self.assertEqual(type(self.base), Base)
         self.assertEqual(isinstance(self.base, Base), True)
@@ -29,6 +29,17 @@ class TestBase(unittest.TestCase):
         ''' increment id'''
         self.assertEqual(self.base.id, 1)
         self.base = Base(None)
+
         self.assertEqual(self.base.id, 2)
+
         self.base = Base(12)
         self.assertEqual(self.base.id, 12)
+
+        self.base = Base(0)
+        self.assertEqual(self.base.id, 0)
+
+        self.base = Base(22)
+        self.assertEqual(self.base.id, 22)
+
+        self.base = Base('base')
+        self.assertEqual(self.base.id, 'base')
