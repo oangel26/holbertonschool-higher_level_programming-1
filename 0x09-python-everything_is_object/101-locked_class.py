@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 class LockedClass:
-    def first_name():
-        return(first_name)
+    def first_name(self):
+        return(self.first_name)
