@@ -11,9 +11,15 @@ class TestBase(unittest.TestCase):
         self.base = Base(None)
 
     def tearDown(self) -> None:
+        self.base = None
         Base.reset()
 
     def test_base_id(self):
         ''' create with correct id'''
-        base = Base(None)
-        self.assertEqual(base.id, 1)
+        self.assertEqual(self.base.id, 1)
+
+    def test_increment_id(self):
+        ''' increment id'''
+        self.assertEqual(self.base.id, 1)
+        self.base = Base(None)
+        self.assertEqual(self.base.id, 2)
