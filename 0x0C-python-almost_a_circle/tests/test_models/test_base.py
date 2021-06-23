@@ -10,10 +10,12 @@ class TestBase(unittest.TestCase):
     def setUp(self):
         Base.reset()
 
-    def test_1_0(self):
-        """Create new instances: check for id."""
+    def test_base_id(self):
+        ''' create with correct id'''
+        self.assertEqual(self.base.id, 1)
 
-        b0 = Base()
-        self.assertEqual(b0.id, 1)
-        b1 = Base()
-        self.assertEqual(b1.id, 2)
+    def test_increment_id(self):
+        ''' increment id'''
+        self.assertEqual(self.base.id, 1)
+        self.base = Base(None)
+        self.assertEqual(self.base.id, 2)
