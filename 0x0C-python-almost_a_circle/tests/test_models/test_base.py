@@ -8,6 +8,10 @@ class TestBase(unittest.TestCase):
     ''' test base cases'''
 
     def setUp(self):
+        self.base = Base(None)
+
+    def tearDown(self) -> None:
+        self.base = None
         Base.reset()
 
     def test_base_id(self):
