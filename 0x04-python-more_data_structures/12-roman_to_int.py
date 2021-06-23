@@ -10,7 +10,10 @@ def roman_to_int(roman_string):
     if roman_string is None or type(roman_string) is not str:
         return total
 
-    for letter in roman_string:
-        total += roman_nums[letter]
+    for idx, letter in enumerate(roman_string):
+        if idx < len(roman_string) - 1 and roman_nums[roman_string[idx + 1]] > roman_nums[letter]:
+            total += roman_nums[letter]
+        else:
+            total -= roman_nums[letter]
 
-    return total
+    return abs(total)
