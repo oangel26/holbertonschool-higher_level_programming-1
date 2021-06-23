@@ -13,6 +13,11 @@ class TestRectangle(unittest.TestCase):
     def tearDown(self):
         Base.reset()
 
+    def creation(self):
+        self.assertTrue(isinstance(self.rectangle, Base))
+        self.assertTrue(issubclass(Rectangle, Base))
+        self.assertFalse(isinstance(Rectangle, Base))
+
     def test_id_rec(self):
         """Test Rectangle class: check for id."""
 
@@ -38,3 +43,13 @@ class TestRectangle(unittest.TestCase):
 
         self.rectangle = Rectangle(10, 10)
         self.assertEqual(self.rectangle.id, 4)
+
+    def test_creation_wrong(self):
+        with self.assertRaises(TypeError) as err:
+            Rectangle("william", 2)
+
+        with self.assertRaises(TypeError) as err:
+            Rectangle(1, "rodriguez")
+
+        with self.assertRaises(TypeError) as err:
+            Rectangle("william", "rodriguez")
