@@ -1,5 +1,5 @@
 -- move to utf8
-CREATE TABLE first_table(
+CREATE TABLE IF NOT EXISTS first_table(
     id int(11) DEFAULT NULL,
     name varchar(256)
     CHARACTER SET utf8
