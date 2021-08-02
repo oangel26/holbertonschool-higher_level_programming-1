@@ -1,6 +1,4 @@
-#!/usr/local/bin/node
-
+#!/usr/bin/node
 if (process.argv.slice(2).length){
-    console.log("No argument");
+    console.log('No argument');
 }
-
