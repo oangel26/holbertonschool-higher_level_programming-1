@@ -1,0 +1,7 @@
+#!/usr/local/bin/node
+let msg = "C is fun"
+console.log(msg)
+msg = "Python is cool"
+console.log(msg)
+msg = "JavaScript is amazing"
+console.log(msg)
