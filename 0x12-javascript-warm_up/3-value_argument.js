@@ -4,4 +4,6 @@ if (args[0] === undefined) {
   console.log('No argument');
 } else if (args[1] === undefined) {
   console.log(args[0]);
+} else {
+  console.log(args.join(' '));
 }
