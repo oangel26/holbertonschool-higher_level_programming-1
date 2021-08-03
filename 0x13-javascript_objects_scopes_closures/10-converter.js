@@ -1,3 +1,2 @@
 #!/usr/bin/node
-const converter = (base) => (num) => num.toString(base);
-exports.converter = converter;
+exports.converter = (base) => (num) => num.toString(base);
