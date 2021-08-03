@@ -8,9 +8,9 @@ class Square extends Rectangle {
     this.size = size;
   }
 
-  charPrint(c){
-    this.cell = c ? c : 'X';
-    this.print()
+  charPrint (c) {
+    this.cell = c || 'X';
+    this.print();
   }
 }
 

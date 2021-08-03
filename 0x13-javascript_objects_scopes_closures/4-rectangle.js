@@ -1,10 +1,9 @@
 #!/usr/bin/node
 class Rectangle {
-
-  cell = 'X'
   constructor (width, height) {
     this.width = width;
     this.height = height;
+    this.cell = 'X';
   }
 
   print () {
